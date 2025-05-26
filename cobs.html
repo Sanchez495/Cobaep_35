@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal - COBAEP Plantel 35</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Encabezado */
+        header {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        /* Barra de navegación */
+        nav {
+            background-color: #2c3e50;
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #1abc9c;
+        }
+
+        /* Contenedor principal */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        /* Sección de personal */
+        .staff {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 40px;
+        }
+
+        .staff-member {
+            flex: 1 1 300px;
+            margin: 15px;
+            padding: 20px;
+            background-color: #ecf0f1;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .staff-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .staff-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 4px solid #2c3e50;
+        }
+
+        .staff-member h3 {
+            font-size: 1.5em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .staff-member p {
+            font-size: 1em;
+            color: #555;
+        }
+
+        /* Pie de página */
+        footer {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: #fff;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1em;
+        }
+
+        footer a {
+            color: #1abc9c;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <h1>Personal del Plantel 35</h1>
+        <p>Colegio de Bachilleres del Estado de Puebla</p>
+    </header>
+    <div class="container">
+        <!-- Sección del Director -->
+        <section id="director">
+            <h2 style="text-align: center; color: #2c3e50; margin-bottom: 30px;">Director</h2>
+            <div class="staff">
+                <div class="staff-member">
+                    <img src="pe.jpeg" alt="Director">
+                    <h3>Alex Ricardo Bustamante Bermejo</h3>
+                    <p>Director del Plantel 35</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Administrativos -->
+        <section id="administrativos">
+            <h2 style="text-align: center; color: #2c3e50; margin-bottom: 30px;">Administrativos</h2>
+            <div class="staff">
+                <div class="staff-member">
+                    <img src="pe.jpeg" alt="Administrativo 1">
+                    <h3>Gloria</h3>
+                    <p>Secretaria</p>
+                </div>
+                <div class="staff-member">
+                    <img src="pe.jpeg" alt="Administrativo 2">
+                    <h3>Rubi</h3>
+                    <p>Control escolar</p>
+                </div>
+                <div class="staff-member">
+                    <img src="pe.jpeg" alt="Administrativo 3">
+                    <h3>Teresa</h3>
+                    <p>Tesorera</p>
+                </div>
+                <div class="staff-member">
+                    <img src="pe.jpeg" alt="Administrativo 4">
+                    <h3>Sergio</h3>
+                    <p>Encargado de biblioteca</p>
+                </div>
+                <div class="staff-member">
+                    <img src="pe.jpeg" alt="Administrativo 5">
+                    <h3>Miguel Angel</h3>
+                    <p>Encargado de becas</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Profesores -->
+        <section id="profesores">
+            <h2 style="text-align: center; color: #2c3e50; margin-bottom: 30px;">Profesores</h2>
+            <div class="staff">
+                <div class="staff-member">
+                    <img src="pe.jpeg" alt="Profesor 1">
+                    <h3>lic.Maria De Los Remedios Mendez Morales</h3>
+                    <p>Formacion Sociemocional II</p>
+                </div>
+                <div class="staff-member">
+                    <img src="pe.jpeg" alt="Profesor 2">
+                    <h3>MTRA.AIDEE ROSAS VALDES</h3>
+                    <p>HUMANIDADES</p>
+                    <p>LENGUA Y COMUNICACION II</p>
+                    <p>INGLES II</p>
+                    <p>INGLES IV</p>
+                    <p>PENSAMIENTO LITERARIO</p>
+                    <p>HISTORIA UNIVERSAL CONTEMPORANEA</p>
+                    <p>DERECHO II</p>
+                    <p>HUMANIDADES</p>
+                    <p>CIENCIAS SOCIALES III</p>
+                </div>
+                <div class="staff-member">
+                    <img src="pe.jpeg" alt="Profesor 3">
+                    <h3>MTRA.MIRIAM GIANELY TORRES CARICIO</h3>
+                    <p>PENSAMIENTO MATEMATICO II</p>
+                    <p>CONSERVACION DE LA ENERGIA Y SUS INTERACCIONES EN LA MATERIA</p>
+                    <p>REACCIONES QUIMICAS:CONSERVACION DE LA MATERIA EN LA FORMACION DE NUEVAS SUSTANCIAS</p>
+                    <p>ECOLOGIA Y MEDIO AMBIENTE</p>
+                </div>
+                <div class="staff-member">
+                    <img src="pe.jpeg" alt="Profesor 4">
+                    <h3>LIC.JAVIER NAHUACATL CASTILLO</h3>
+                    <p>CONCIENCIA HISTORICA I.PERSPECTIVAS DEL MEXICO ANTIGUO,LOS CONTEXTOS GLOBALES</p>
+                    <p>CIENCIAS SOCIALES II</p>
+                    <p>CIENCIAS SOCIALES III</p>
+                    <p>HUMANIDADES II</p>
+                    <p>SOCIOLOGIA II</p>
+                    <p>FILOSOFIA</p>
+                    <p>HISTORIA UNIVERSAL CONTEMPORANEA</p>
+                </div>
+                <div class="staff-member">
+                    <img src="pe.jpeg" alt="Profesor 5">
+                    <h3>ING.JOSE MIGUEL QUECHO NAHUACATL</h3>
+                    <p>TALLER DE CIENCIAS I</p>
+                    <p>CULTURA DIGITAL II</p>
+                    <p>TALLER DE CULTURA DIGITAL</p>
+                    <p>DISEÑO DIGITAL</p>
+                    <p>PAGINAS WEB</p>
+                    <p>ADMINISTRACION II</p>
+                    <p>MANTENIMIENTO Y REDES DE COMPUTO</p>
+                    <p>COMUNIDADES VIRTUALES</p>
+                </div>
+                <div class="staff-member">
+                    <img src="pe.jpeg" alt="Profesor 6">
+                    <h3>LIC.ALMA STEPHANIE ESPINOSA LUNA</h3>
+                    <p>PSICOLOGIA II</p>
+                    <p>ORIENTACION EDUCATIVA VI</p>
+                    <p>FORMACION SOCIEMOCIONAL IV</p>
+
+                </div>
+                <div class="staff-member">
+                    <img src="pe.jpeg" alt="Profesor 7">
+                    <h3>ING.ELI MARTINEZ CORTES</h3>
+                    <p>TEMAS SELECTOS DE MATEMATICAS I</p>
+                    <p>ESPACIO Y SOCIEDAD</p>
+                    <p>TALLER DE CIENCIAS I</p>
+                    <p>CALCULO INTEGRAL</p>
+                </div>
+                <div class="staff-member">
+                    <img src="pe.jpeg" alt="Profesor 8">
+                    <h3>ING.SANDRA COLULA HERNANDEZ</h3>
+                    <p>ELABORAR PRODUCTOS UTILIZANDO LECHE,DERIVADOS Y SUSTITUTOS</p>
+                    <p>ELABORAR PRODUCTOS UTILIZANDO CARNES Y SUS DERIVADOS</p>
+                    <p>INOCUIDAD DE LOS ALIMENTOS</p>
+                    <p>CONTAMINACION DE LOS ALIMENTOS</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de servicios -->
+        <section id="orden">
+            <h2 style="text-align: center; color: #2c3e50; margin-bottom: 30px;">Servicios</h2>
+            <div class="staff">
+                <div class="staff-member">
+                    <img src="pe.jpeg" alt="Servicios">
+                    <h3>ARMANDO QUECHO NAHUACATL </h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección del Cuidador -->
+        <section id="cuidador">
+            <div class="staff">
+                <div class="staff-member">
+                    <img src="pe.jpeg" alt="Servicios">
+                    <h3>TOÑO </h3>
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>Contacto: <a href="mailto:plantel35@cobaep.edu.mx">plantel35@cobaep.edu.mx</a> | Teléfono: (222) 123-4567</p>
+        <p>&copy; 2023 Colegio de Bachilleres Plantel 35. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danza Folklórica Mexicana</title>
+    <style>
+        /* Estilos generales */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #e0dbdb; /* Fondo gris claro */
+            color: #000000; /* Texto negro */
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            background-image: url("que.jpeg"); /* Imagen de fondo */
+            background-size: cover;
+            background-position: center;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden; /* Para que el pseudo-elemento no se desborde */
+        }
+        .header h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative; /* Para posicionar el texto sobre la imagen */
+            z-index: 2; /* Asegura que el texto esté sobre la imagen */
+        }
+        .header p {
+            font-size: 1.2rem;
+            margin: 10px 0 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative; /* Para posicionar el texto sobre la imagen */
+            z-index: 2; /* Asegura que el texto esté sobre la imagen */
+        }
+        /* Imagen de fondo detrás del título */
+        .header::before {
+            content: "";
+            background-image: url("titulo_fondo.jpg"); /* Imagen de fondo para el título */
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.5; /* Ajusta la opacidad de la imagen */
+            z-index: 1; /* Coloca la imagen detrás del texto */
+        }
+
+        /* Contenido Principal */
+        .container {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section {
+            margin-bottom: 60px;
+            background-color: #ffffff; /* Fondo blanco */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            color: #9D2449; /* Rojo mexicano */
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .section p {
+            font-size: 1.1rem;
+            color: #333333;
+            text-align: justify;
+        }
+        .section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            display: block;
+            margin: 20px auto;
+        }
+
+        /* Galería */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .gallery img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #006847; /* Verde mexicano */
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        .footer a {
+            color: #FFD700; /* Dorado */
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Estilo específico para la imagen de Trajes Típicos */
+        .trajes-tipicos img {
+            width: 50%; /* Reduce el tamaño de la imagen a la mitad */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>Danza Folklórica Mexicana</h1>
+        <p>Explora la riqueza cultural de México a través de su danza tradicional.</p>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="container">
+        <!-- Sección de Historia -->
+        <div id="historia" class="section">
+            <h2>Danza Folklórica</h2>
+            <p>
+                La danza folklórica mexicana es una expresión cultural que combina música, vestuario y movimientos únicos. Cada región de México tiene sus propios bailes tradicionales, como el Jarabe Tapatío, la Danza de los Viejitos y el Son Jarocho. Estas danzas son una ventana a la historia y las tradiciones de nuestro país.
+            </p>
+        </div>
+
+        <!-- Sección de Trajes Típicos -->
+        <div id="trajes" class="section trajes-tipicos">
+            <h2>Trajes Típicos</h2>
+            <img src="pt.jpeg" alt="Trajes Típicos">
+            <p>
+                Los trajes típicos de la danza folklórica son una parte esencial de su belleza. Desde los coloridos vestidos de Jalisco hasta los elegantes trajes de Veracruz, cada prenda cuenta una historia y representa la identidad de su región.
+            </p>
+        </div>
+
+        <!-- Sección de Galería -->
+        <div id="galeria" class="section">
+            <h2>Galería</h2>
+            <div class="gallery">
+                <img src="cc.jpeg" alt="Danza Folklórica 1">
+                <img src="ddd.jpeg" alt="Danza Folklórica 2">
+                <img src="zp.jpeg" alt="Danza Folklórica 3">
+                <img src="sd.jpeg" alt="Danza Folklórica 4">
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2023 Danza Folklórica Mexicana. Todos los derechos reservados.</p>
+        <p><a href="#">Política de Privacidad</a> | <a href="#">Términos y Condiciones</a></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rondalla - Música Tradicional</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-image: url("ronf.jpeg"); /* Imagen de fondo */
+            background-size: cover; /* Cubre todo el encabezado */
+            background-position: center; /* Centra la imagen */
+            color: white;
+            padding: 100px 0; /* Aumenta el padding para dar más espacio */
+            text-align: center;
+            position: relative; /* Para el overlay */
+        }
+
+        /* Overlay para mejorar la legibilidad del texto */
+        header::before {
+            content: "";
+            background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1; /* Coloca el overlay detrás del texto */
+        }
+
+        header h1, header p {
+            position: relative; /* Asegura que el texto esté sobre el overlay */
+            z-index: 2; /* Coloca el texto sobre el overlay */
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para mejorar la legibilidad */
+        }
+
+        header p {
+            font-size: 1.5em;
+            margin: 10px 0 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para mejorar la legibilidad */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h2 {
+            color: #8B4513;
+            font-size: 2em;
+            margin-top: 0;
+        }
+
+        .container p {
+            line-height: 1.6;
+        }
+
+        .container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px 0;
+            border-radius: 10px; /* Bordes redondeados para la imagen */
+        }
+
+        footer {
+            background-color: #8B4513;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Rondalla</h1>
+        <p>Música Tradicional y Cultura</p>
+    </header>
+
+    <div class="container">
+        <section id="historia">
+            <h2>La Rondalla</h2>
+            <p>La Rondalla es un conjunto musical tradicional que tiene sus raíces en la música popular de España y América Latina. Se caracteriza por el uso de instrumentos de cuerda pulsada, como la guitarra, el requinto, el guitarrón y la mandolina. La Rondalla ha sido una parte importante de la cultura musical en muchas regiones, especialmente en festividades y celebraciones.</p>
+            <p>Su origen se remonta a los trovadores medievales, quienes tocaban y cantaban en plazas y calles. Con el tiempo, la Rondalla evolucionó y se adaptó a diferentes contextos culturales, manteniendo su esencia y encanto.</p>
+        </section>
+
+        <section id="instrumentos">
+            <h2>Instrumentos de la Rondalla</h2>
+            <p>Los instrumentos más comunes en una Rondalla incluyen:</p>
+            <ul>
+                <li><strong>Guitarra:</strong> El instrumento principal, que proporciona la base armónica.</li>
+                <li><strong>Requinto:</strong> Una guitarra pequeña que toca melodías agudas.</li>
+                <li><strong>Guitarrón:</strong> Un instrumento de bajo que aporta profundidad al sonido.</li>
+                <li><strong>Mandolina:</strong> Un instrumento de cuerda que añade brillo y textura.</li>
+            </ul>
+        </section>
+
+        <section id="galeria">
+            <h2>Galería</h2>
+            <img src="ka.jpeg" alt="Rondalla en concierto">
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>Si deseas conocer más sobre la Rondalla o contratar un conjunto musical, no dudes en contactarnos:</p>
+            <p>Email: <a href="mailto:info@rondalla.com">info@rondalla.com</a></p>
+            <p>Teléfono: +123 456 7890</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Rondalla - Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banda Musical - Música y Alma</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Helvetica', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+
+        /* Encabezado con imagen de fondo */
+        header {
+            background-image: url("xe.jpeg"); /* Imagen de fondo */
+            background-size: cover; /* Cubre todo el encabezado */
+            background-position: center; /* Centra la imagen */
+            color: white;
+            padding: 100px 0; /* Aumenta el padding para dar más espacio */
+            text-align: center;
+            position: relative; /* Para el overlay */
+        }
+
+        /* Overlay para mejorar la legibilidad del texto */
+        header::before {
+            content: "";
+            background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1; /* Coloca el overlay detrás del texto */
+        }
+
+        header h1, header p {
+            position: relative; /* Asegura que el texto esté sobre el overlay */
+            z-index: 2; /* Coloca el texto sobre el overlay */
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 4em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para mejorar la legibilidad */
+        }
+
+        header p {
+            font-size: 1.3em;
+            margin: 10px 0 0;
+            font-style: italic;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para mejorar la legibilidad */
+        }
+
+        /* Contenedor principal */
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+        }
+
+        .container h2 {
+            color: #6a11cb; /* Morado */
+            font-size: 2.5em;
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .container p {
+            line-height: 1.8;
+            font-size: 1.1em;
+            text-align: justify;
+        }
+
+        .container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px 0;
+            border-radius: 15px;
+        }
+
+        /* Galería de imágenes */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Grid flexible */
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px; /* Altura fija para las imágenes */
+            object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsión */
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Pie de página */
+        footer {
+            background: linear-gradient(135deg, #6a11cb, #2575fc); /* Degradado morado a azul */
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            .container h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado con imagen de fondo -->
+    <header>
+        <h1>Banda Musical</h1>
+        <p>Donde la música se convierte en alma</p>
+    </header>
+
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Sección de Historia -->
+        <section id="historia">
+            <h2>Nuestra Historia</h2>
+            <p>La Banda Musical nació de la pasión por crear melodías que toquen el corazón. Desde nuestros humildes comienzos en pequeños escenarios hasta conquistar grandes festivales, cada nota ha sido un paso en nuestro viaje. Combinamos ritmos modernos con influencias clásicas para crear un sonido único que resuena en cada persona que nos escucha.</p>
+            <p>Nuestra misión es simple: llevar alegría, inspiración y emoción a través de la música. Cada concierto es una experiencia inolvidable, llena de energía y conexión con el público.</p>
+        </section>
+
+        <!-- Sección de Alma Creativa -->
+        <section id="alma-creativa">
+            <h2>Alma Creativa</h2>
+            <p>Detrás de cada acorde hay un artista apasionado. Conoce a las mentes y corazones que dan vida a nuestra música:</p>
+            <ul>
+                <li><strong>Luna Martínez:</strong> Voz principal y compositora.</li>
+                <li><strong>Diego Ríos:</strong> Guitarra líder y arreglos.</li>
+                <li><strong>Sofía Navarro:</strong> Batería y percusión.</li>
+                <li><strong>Carlos Vega:</strong> Bajo y sintetizadores.</li>
+                <li><strong>Ana Torres:</strong> Teclados y coros.</li>
+            </ul>
+        </section>
+
+        <!-- Sección de Momentos Mágicos -->
+        <section id="momentos-magicos">
+            <h2>Momentos Mágicos</h2>
+            <p>Próximas fechas para vivir la magia de nuestra música:</p>
+            <ul>
+                <li><strong>Noche bajo las estrellas:</strong> 20 de octubre, 8:00 PM - Parque Central.</li>
+                <li><strong>Festival de Luces y Sonidos:</strong> 28 de octubre, 7:00 PM - Teatro Municipal.</li>
+                <li><strong>Concierto íntimo:</strong> 5 de noviembre, 6:00 PM - Café Cultural.</li>
+            </ul>
+        </section>
+
+        <!-- Sección de Galería -->
+        <section id="galeria">
+            <h2>Galería</h2>
+            <div class="gallery">
+                <img src="xa.jpeg" alt="Banda en concierto">
+                <img src="xi.jpeg" alt="Integrantes de la banda">
+                <img src="xo.jpeg" alt="Banda en el estudio">
+            </div>
+        </section>
+
+        <!-- Sección de Contacto -->
+        <section id="contacto">
+            <h2>Conéctate</h2>
+            <p>¿Quieres que formemos parte de tu evento o simplemente quieres saber más? ¡Escríbenos!</p>
+            <p>Email: <a href="mailto:info@bandamusical.com">info@bandamusical.com</a></p>
+            <p>Teléfono: +123 456 7890</p>
+        </section>
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2023 Banda Musical - Donde la música cobra vida.</p>
+    </footer>
+
+</body>
+</html>

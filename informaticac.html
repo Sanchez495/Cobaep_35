@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capacitación en Informática - COBAEP</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Encabezado con imagen de fondo */
+        header {
+            background-image: url('C.jpg'); /* Cambia esta URL por tu imagen de fondo */
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            position: relative;
+            font-size: 3em;
+            margin: 0;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        header p {
+            position: relative;
+            font-size: 1.2em;
+            margin-top: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Barra de navegación */
+        nav {
+            background-color: #2c3e50;
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #1abc9c;
+        }
+
+        /* Contenedor principal */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        /* Sección de bienvenida */
+        .welcome {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .welcome h2 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .welcome p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        /* Sección de características */
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .feature {
+            flex: 1;
+            margin: 15px;
+            padding: 20px;
+            background-color: #ecf0f1;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature h3 {
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .feature p {
+            font-size: 1em;
+            color: #555;
+        }
+
+        .feature img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        /* Contenedor de la galería */
+        .gallery-container {
+            display: flex;
+            justify-content: center; /* Centra horizontalmente */
+            margin-top: 40px;
+        }
+
+        /* Galería de prácticas */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            max-width: 1200px; /* Limita el ancho máximo */
+            width: 100%; /* Ocupa el 100% del contenedor */
+        }
+
+        .gallery img {
+            width: 100%;
+            max-width: 100%; /* Asegura que las imágenes no excedan el ancho de su contenedor */
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: block; /* Elimina el espacio adicional debajo de las imágenes */
+            margin: 0 auto; /* Centra las imágenes horizontalmente */
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        /* Pie de página */
+        footer {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: #fff;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1em;
+        }
+
+        footer a {
+            color: #1abc9c;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado con imagen de fondo -->
+    <header>
+        <h1>Capacitación en Informática</h1>
+        <p>Colegio de Bachilleres del Estado de Puebla</p>
+    </header>
+
+    <!-- Contenido principal -->
+    <div class="container">
+        <!-- Sección de bienvenida -->
+        <section class="welcome" id="inicio">
+            <h2>Bienvenidos a la Capacitación en Informática</h2>
+            <p>
+                En el Colegio de Bachilleres del Estado de Puebla, ofrecemos una capacitación en informática diseñada para formar a los estudiantes en las habilidades tecnológicas más demandadas del siglo XXI. Nuestro programa combina teoría y práctica para garantizar una formación integral.
+            </p>
+        </section>
+
+        <!-- Sección de características -->
+        <section class="features" id="programa">
+            <div class="feature">
+                <h3>Programa de Estudios</h3>
+                <p>
+                    Cursos en programación, redes, bases de datos, desarrollo web y más, impartidos por expertos en el campo.
+                </p>
+            </div>
+            <div class="feature">
+                <h3>Instalaciones Modernas</h3>
+                <p>
+                    Laboratorios equipados con tecnología de punta para un aprendizaje práctico y efectivo.
+                </p>
+            </div>
+            <div class="feature">
+                <h3>Certificaciones</h3>
+                <p>
+                    Al finalizar, los estudiantes obtienen certificaciones reconocidas a nivel nacional e internacional.
+                </p>
+            </div>
+        </section>
+
+        <!-- Galería de prácticas -->
+        <section class="welcome" id="galeria">
+            <h2>Galería de Prácticas</h2>
+            <div class="gallery-container">
+                <div class="gallery">
+                    <img src="7.jpg" alt="Práctica 1">
+                    <img src="8.jpg" alt="Práctica 2">
+                    <img src="9.jpg" alt="Práctica 3">
+                    <img src="11.jpg" alt="Práctica 4">
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal para imágenes -->
+        <div class="modal" id="modal">
+            <img src="" alt="Imagen ampliada" id="modal-img">
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer id="contacto">
+        <p>Contacto: <a href="mailto:informatica@cobaep.edu.mx">informatica@cobaep.edu.mx</a> | Teléfono: (222) 123-4567</p>
+        <p>&copy; 2023 Colegio de Bachilleres del Estado de Puebla. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Script para el modal
+        const modal = document.getElementById('modal');
+        const modalImg = document.getElementById('modal-img');
+        const images = document.querySelectorAll('.gallery img');
+
+        images.forEach(img => {
+            img.addEventListener('click', () => {
+                modal.classList.add('active');
+                modalImg.src = img.src;
+            });
+        });
+
+        modal.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+    </script>
+</body>
+</html>

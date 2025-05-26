@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banner COBAEP Premium</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .upload-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .upload-btn {
+            background: #003366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: inline-block;
+            margin-top: 10px;
+            transition: all 0.3s;
+        }
+
+        .upload-btn:hover {
+            background: #0066CC;
+        }
+
+        #file-input {
+            display: none;
+        }
+
+        .banner {
+            width: 250px;
+            height: 600px;
+            background: linear-gradient(135deg, #003366 0%, #0066CC 50%, #9E0B0F 100%);
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px 0;
+            color: white;
+            text-align: center;
+            border: 3px solid rgba(255, 255, 255, 0.15);
+        }
+
+        /* Efecto de fuego en la parte inferior */
+        .fire-effect {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to top, rgba(158, 11, 15, 0.8), transparent);
+            z-index: 0;
+        }
+
+        /* Figuras geométricas avanzadas */
+        .geometric-shape {
+            position: absolute;
+            z-index: 0;
+            opacity: 0.15;
+        }
+
+        .shape1 {
+            top: 10%;
+            right: -30px;
+            width: 120px;
+            height: 120px;
+            background: #FFD700;
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .shape2 {
+            bottom: 25%;
+            left: -40px;
+            width: 100px;
+            height: 100px;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            background: #9E0B0F;
+            animation: float 7s ease-in-out infinite 1s;
+        }
+
+        .shape3 {
+            top: 30%;
+            left: 20%;
+            width: 60px;
+            height: 60px;
+            background: white;
+            clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+            animation: float 6s ease-in-out infinite 0.5s;
+        }
+
+        .shape4 {
+            bottom: 15%;
+            right: 10%;
+            width: 80px;
+            height: 80px;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            background: rgba(255, 215, 0, 0.4);
+            animation: float 9s ease-in-out infinite 1.5s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        /* Contenedor de imagen */
+        .image-container {
+            width: 180px;
+            height: 180px;
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 20px 0;
+            position: relative;
+            z-index: 2;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            background: #003366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-container::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 2px dashed rgba(255, 215, 0, 0.5);
+            border-radius: 25px;
+            animation: rotate 20s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .image-placeholder {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            padding: 20px;
+            text-align: center;
+            display: none;
+        }
+
+        #banner-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            z-index: 2;
+            color: #FFD700;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .logo::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 25%;
+            width: 50%;
+            height: 3px;
+            background: #9E0B0F;
+            border-radius: 3px;
+        }
+
+        .slogan {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 10px;
+            z-index: 2;
+            padding: 0 25px;
+            font-weight: 300;
+            position: relative;
+        }
+
+        .social-container {
+            width: 100%;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 2;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            z-index: 2;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            color: white;
+            font-size: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transform-style: preserve-3d;
+            transform: perspective(500px);
+        }
+
+        .social-icon:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: perspective(500px) rotateY(15deg) scale(1.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .facebook:hover { color: #1877F2; background: white; }
+        .instagram:hover { 
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: white;
+        }
+        .whatsapp:hover { color: white; background: #25D366; }
+
+        .footer-text {
+            font-size: 11px;
+            opacity: 0.7;
+            z-index: 2;
+            margin-top: 10px;
+            letter-spacing: 1px;
+            font-weight: 300;
+        }
+
+        /* Partículas decorativas */
+        .particle {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: particles 15s linear infinite;
+        }
+
+        @keyframes particles {
+            0% { transform: translateY(0) translateX(0); opacity: 0; }
+            10% { opacity: 0.1; }
+            90% { opacity: 0.1; }
+            100% { transform: translateY(-100px) translateX(20px); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="upload-container">
+        <h3>Selecciona una imagen para el banner</h3>
+        <label for="file-input" class="upload-btn">
+            <i class="fas fa-upload"></i> Seleccionar imagen
+        </label>
+        <input type="file" id="file-input" accept="image/*">
+    </div>
+
+    <div class="banner">
+        <!-- Efecto de fuego -->
+        <div class="fire-effect"></div>
+        
+        <!-- Figuras geométricas -->
+        <div class="geometric-shape shape1"></div>
+        <div class="geometric-shape shape2"></div>
+        <div class="geometric-shape shape3"></div>
+        <div class="geometric-shape shape4"></div>
+        
+        <!-- Partículas decorativas -->
+        <div class="particle" style="width: 3px; height: 3px; top: 20%; left: 15%; animation-delay: 0s;"></div>
+        <div class="particle" style="width: 4px; height: 4px; top: 40%; left: 80%; animation-delay: 2s;"></div>
+        <div class="particle" style="width: 2px; height: 2px; top: 70%; left: 30%; animation-delay: 4s;"></div>
+        <div class="particle" style="width: 3px; height: 3px; top: 30%; left: 60%; animation-delay: 6s;"></div>
+        
+        <!-- Contenido principal -->
+        <div style="z-index: 2; display: flex; flex-direction: column; align-items: center;">
+            <div class="logo">COBAEP</div>
+            <div class="slogan">Transformando Educación con Excelencia</div>
+            
+            <!-- Contenedor de imagen -->
+            <div class="image-container">
+                <div class="image-placeholder">Aquí puedes agregar una imagen</div>
+                <img id="banner-image" alt="Imagen COBAEP">
+            </div>
+        </div>
+        
+        <!-- Redes sociales en la parte inferior -->
+        <div class="social-container">
+            <div class="social-icons">
+                <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="social-icon youtube"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="footer-text">CONÉCTATE CON NOSOTROS</div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('file-input').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const bannerImage = document.getElementById('banner-image');
+                    const placeholder = document.querySelector('.image-placeholder');
+                    
+                    bannerImage.src = event.target.result;
+                    bannerImage.style.display = 'block';
+                    placeholder.style.display = 'none';
+                    
+                    // Mostrar mensaje de éxito
+                    alert('¡Imagen cargada correctamente!');
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>

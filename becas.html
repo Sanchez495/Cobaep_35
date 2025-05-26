@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Becas y Condonaciones - COBAEP</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Encabezado */
+        header {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #1abc9c;
+        }
+
+        /* Contenedor principal */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        /* Sección de bienvenida */
+        .welcome {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .welcome h2 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .welcome p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        /* Sección de información */
+        .info {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .info-card {
+            flex: 1;
+            margin: 15px;
+            padding: 20px;
+            background-color: #ecf0f1; /* Fondo de respaldo */
+            background-image: url('ma.jpeg'); /* Cambia esta URL por tu imagen de fondo */
+            background-size: cover; /* Ajusta la imagen al tamaño del recuadro */
+            background-position: center; /* Centra la imagen */
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            position: relative; /* Para el fondo semitransparente */
+            overflow: hidden; /* Evita que la imagen se desborde */
+        }
+
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
+            z-index: 1; /* Coloca el fondo detrás del contenido */
+        }
+
+        .info-card h3,
+        .info-card p {
+            position: relative; /* Asegura que el texto esté sobre el fondo semitransparente */
+            z-index: 2; /* Coloca el texto sobre el fondo */
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .info-card h3 {
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .info-card p {
+            font-size: 1em;
+            color: #555;
+        }
+
+        /* Pie de página */
+        footer {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: #fff;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1em;
+        }
+
+        footer a {
+            color: #1abc9c;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <h1>Becas y Condonaciones</h1>
+        <p>Colegio de Bachilleres del Estado de Puebla</p>
+    </header>
+
+    <!-- Barra de navegación -->
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#becas">Becas</a>
+        <a href="#condonaciones">Condonaciones</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container">
+        <!-- Sección de bienvenida -->
+        <section class="welcome" id="inicio">
+            <h2>Bienvenidos al Programa de Becas y Condonaciones</h2>
+            <p>
+                En el Colegio de Bachilleres del Estado de Puebla, nos preocupamos por brindar oportunidades a nuestros estudiantes. Nuestros programas de becas y condonaciones están diseñados para apoyar a quienes más lo necesitan y fomentar la excelencia académica.
+            </p>
+        </section>
+
+        <!-- Sección de becas -->
+        <section class="info" id="becas">
+            <div class="info-card">
+                <h3>Becas Académicas</h3>
+                <p>
+                    Reconocimiento al mérito académico. Ofrecemos becas para estudiantes con un promedio destacado.
+                </p>
+            </div>
+            <div class="info-card">
+                <h3>Becas Socioeconómicas</h3>
+                <p>
+                    Apoyo económico para estudiantes con dificultades financieras. Requiere documentación comprobatoria.
+                </p>
+            </div>
+            <div class="info-card">
+                <h3>Beca Benito Juárez</h3>
+                <p>
+                    Disponible para todos los alumnos del plantel. Requiere documentación.
+                </p>
+            </div>
+        </section>
+
+        <!-- Sección de condonaciones -->
+        <section class="welcome" id="condonaciones">
+            <h2>Programa de Condonaciones</h2>
+            <p>
+                Nuestro programa de condonaciones está dirigido a estudiantes que enfrentan situaciones económicas adversas. Ofrecemos la posibilidad de condonar parcial o totalmente los pagos de inscripción y colegiatura, previa evaluación de cada caso.
+            </p>
+        </section>
+
+        <!-- Sección de requisitos -->
+        <section class="info">
+            <div class="info-card">
+                <h3>Requisitos para Becas Académicas</h3>
+                <p>
+                    - Promedio mínimo de 8.5<br>
+                    - Carta de motivos<br>
+                    - Comprobante de ingresos<br>
+                    - Hoja de liberación<br>
+                    - Documentación oficial
+                </p>
+            </div>
+            <div class="info-card">
+                <h3>Requisitos para Condonaciones</h3>
+                <p>
+                    - Estudio socioeconómico<br>
+                    - Comprobante de situación económica<br>
+                    - Carta de solicitud<br>
+                    - Entrevista con el comité
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Pie de página -->
+    <footer id="contacto">
+        <p>Contacto: <a href="mailto:becas@cobaep.edu.mx">becas@cobaep.edu.mx</a> | Teléfono: (222) 987-6543</p>
+        <p>&copy; 2023 Colegio de Bachilleres del Estado de Puebla. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

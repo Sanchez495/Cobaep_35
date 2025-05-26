@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colegio de Bachilleres del Estado de Puebla</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("si.jpeg");
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        .main-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 30px 15px;
+        }
+        
+        .section {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 40px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+        
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .section-content {
+            padding: 20px;
+        }
+        
+        .section h2 {
+            color: #9D2449;
+            font-size: 1.8rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        /* Animación para los títulos */
+        .section h2::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -5px;
+            left: 0;
+            background-color: #9D2449;
+            transition: width 0.5s ease;
+        }
+        
+        .section:hover h2::after {
+            width: 100%;
+        }
+        
+        /* Animación para el texto */
+        .section p, .section ul {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.5s ease;
+            transition-delay: 0.3s;
+        }
+        
+        .section.visible p, 
+        .section.visible ul {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        /* Animación para los items de lista */
+        .section ul li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+            opacity: 0;
+            transform: translateX(-15px);
+            transition: all 0.4s ease;
+        }
+        
+        .section ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #9D2449;
+            font-size: 1.2em;
+        }
+        
+        .section.visible ul li {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        /* Retrasos escalonados para los items de lista */
+        .section.visible ul li:nth-child(1) { transition-delay: 0.4s; }
+        .section.visible ul li:nth-child(2) { transition-delay: 0.5s; }
+        .section.visible ul li:nth-child(3) { transition-delay: 0.6s; }
+        .section.visible ul li:nth-child(4) { transition-delay: 0.7s; }
+        .section.visible ul li:nth-child(5) { transition-delay: 0.8s; }
+        
+        .section ul {
+            padding-left: 0;
+            list-style-type: none;
+        }
+        
+        .section-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .section:hover .section-img {
+            transform: scale(1.05);
+        }
+        
+        /* Animaciones clave */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .section {
+                flex-direction: row;
+                min-height: 250px;
+            }
+            
+            /* Todas las secciones con imagen a la izquierda */
+            .section {
+                flex-direction: row;
+            }
+            
+            .section-content {
+                flex: 2;
+                padding: 25px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            
+            .section-img-container {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+            }
+            
+            .section-img {
+                height: 100%;
+                max-height: 200px;
+                width: auto;
+                max-width: 100%;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .section-img {
+                height: 180px;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            header {
+                padding: 60px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Colegio de Bachilleres del Estado de Puebla</h1>
+    </header>
+
+    <div class="main-container">
+        <!-- Sección Quiénes Somos -->
+        <section class="section">
+            <div class="section-img-container">
+                <img src="cobe.jpeg" alt="Imagen de Quiénes Somos" class="section-img">
+            </div>
+            <div class="section-content">
+                <h2>Quiénes Somos</h2>
+                <p>El Colegio de Bachilleres del Estado de Puebla es una institución educativa comprometida con la formación integral de los jóvenes, brindando una educación de calidad que les permita desarrollarse académica, social y personalmente.</p>
+            </div>
+        </section>
+
+        <!-- Sección Misión -->
+        <section class="section">
+            <div class="section-img-container">
+                <img src="dddd.jpeg" alt="Imagen de Misión" class="section-img">
+            </div>
+            <div class="section-content">
+                <h2>Misión</h2>
+                <p>Nuestra misión es ofrecer un servicio educativo de calidad, formando bachilleres competentes, críticos y comprometidos con su entorno, capaces de enfrentar los retos de la sociedad actual y contribuir al desarrollo de su comunidad.</p>
+            </div>
+        </section>
+
+        <!-- Sección Visión -->
+        <section class="section">
+            <div class="section-img-container">
+                <img src="ppp.jpeg" alt="Imagen de Visión" class="section-img">
+            </div>
+            <div class="section-content">
+                <h2>Visión</h2>
+                <p>Ser una institución líder en la educación media superior, reconocida por su excelencia académica, innovación educativa y compromiso con el desarrollo integral de los estudiantes.</p>
+            </div>
+        </section>
+
+        <!-- Sección Valores -->
+        <section class="section">
+            <div class="section-img-container">
+                <img src="zzzz.jpeg" alt="Imagen de Valores" class="section-img">
+            </div>
+            <div class="section-content">
+                <h2>Valores</h2>
+                <ul>
+                    <li><strong>Respeto:</strong> Fomentamos el respeto hacia las personas, las ideas y el medio ambiente.</li>
+                    <li><strong>Responsabilidad:</strong> Promovemos la responsabilidad en el cumplimiento de las tareas y compromisos.</li>
+                    <li><strong>Honestidad:</strong> Valoramos la honestidad como base de la confianza y la integridad.</li>
+                    <li><strong>Solidaridad:</strong> Incentivamos la solidaridad y el trabajo en equipo.</li>
+                    <li><strong>Excelencia:</strong> Buscamos la excelencia en todo lo que hacemos, tanto en lo académico como en lo personal.</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Animación de aparición al hacer scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            
+            // Efecto hover para los títulos
+            const sectionTitles = document.querySelectorAll('.section h2');
+            sectionTitles.forEach(title => {
+                title.addEventListener('mouseenter', () => {
+                    title.style.animation = 'none';
+                    void title.offsetWidth; // Trigger reflow
+                    title.style.animation = 'fadeInLeft 0.5s ease-out';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
